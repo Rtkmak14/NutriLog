@@ -1,4 +1,7 @@
 //default server setup
+const dotenv = require("dotenv")
+dotenv.config()
+
 const express = require("express")
 const app = express()
 
@@ -20,9 +23,6 @@ const port = process.env.PORT? process.env.PORT: "3000"
 //controller setup
 
 //middleware configuration
-const dotenv = require("dotenv")
-dotenv.config()
-
 const methodOverride = require("method-override")
 const morgan = require("morgan")
 const session = require("express-session")
