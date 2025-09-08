@@ -17,6 +17,9 @@ const connect = async ()=> {
 }
 connect()
 
+const authController = require("./controllers/auth.js")
+const foodsController = require("./controllers/food.js")
+
 const port = process.env.PORT? process.env.PORT: "3000"
 
 
@@ -39,15 +42,18 @@ app.use(passUserToView)
 app.get(`/`,(req,res)=> {
     // console.log(req.session.user)
     if (req.session.user) {
-        res.redirect(`/users/${req.session.user._id}/applications`)
+        // res.redirect(`/users/${req.session.user._id}/foods`)
+        res.render("./index.ejs",{user:req.session.user})
     }
 
     else {
-        res.render("index.ejs")
+        res.render("index.ejs",{user:req.session.user})
     }
 })
 
+app.use(`/auth`,authController)
 app.use(isSignedIn)
+app.use(`/users/:userId/foods`,foodsController)
 
 app.listen(port, ()=> {
     console.log(`I'm listening on port ${port}`)

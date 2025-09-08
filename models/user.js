@@ -21,8 +21,8 @@ const foodSchema = new mongoose.Schema({
 })
 
 const userSchema = new mongoose.Schema({
-    username: {type:strnng, required: true},
-    password: {type: stringing, required:true},
+    username: {type:String, required: true},
+    password: {type: String, required:true},
     foods: [foodSchema]
 })
 

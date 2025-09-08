@@ -6,9 +6,14 @@
     <title>Homepage</title>
 </head>
 <body>
-    <h1>Welcome to NutriLog</h1>
-    <p>A nutrition tracking application.</p>
-    <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Sign in</a>
+    <% if (user) { %>
+    <h1>Welcome to NutriLog, <%= user.username %>!</h1>
+    <a href="/auth/sign-out">Sign out</a>
+    <% } else { %>
+    <h1>Welcome to NutriLog, guest.</h1>
+    <p>
+        <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
+    </p>
+<% } %>
 </body>
 </html>
