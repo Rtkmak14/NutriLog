@@ -1,4 +1,3 @@
-//default server setup
 const dotenv = require("dotenv")
 dotenv.config()
 
@@ -20,12 +19,12 @@ connect()
 
 const port = process.env.PORT? process.env.PORT: "3000"
 
-//controller setup
 
-//middleware configuration
 const methodOverride = require("method-override")
 const morgan = require("morgan")
 const session = require("express-session")
+const isSignedIn = require("./middleware/is-signed-in.js")
+const passUserToView = require("./middleware/pass-user-to-view.js")
 
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride(`_method`))
@@ -35,11 +34,20 @@ app.use(session({
      saveUninitialized: true
 }))
 
-//routes
+app.use(passUserToView)
 
-//controller routes
+app.get(`/`,(req,res)=> {
+    // console.log(req.session.user)
+    if (req.session.user) {
+        res.redirect(`/users/${req.session.user._id}/applications`)
+    }
 
-//listen
+    else {
+        res.render("index.ejs")
+    }
+})
+
+app.use(isSignedIn)
 
 app.listen(port, ()=> {
     console.log(`I'm listening on port ${port}`)
