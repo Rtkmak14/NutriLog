@@ -42,8 +42,7 @@ app.use(passUserToView)
 app.get(`/`,(req,res)=> {
     // console.log(req.session.user)
     if (req.session.user) {
-        // res.redirect(`/users/${req.session.user._id}/foods`)
-        res.render("./index.ejs",{user:req.session.user})
+        res.redirect(`/users/${req.session.user._id}/foods`)
     }
 
     else {
