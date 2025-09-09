@@ -12,12 +12,12 @@ const foodSchema = new mongoose.Schema({
     "condiment", "supplement", "processed", "other"
         ]},
     servingSize: String,       
-    calories: Number,
-    fat: Number,
-    carbohydrates: Number,
-    protein: Number,
-    sodium: Number,
-    cholesterol: Number,
+    calories: String,
+    fat: String,
+    carbohydrates: String,
+    protein: String,
+    sodium: String,
+    cholesterol: String,
     isLow: Boolean
 })
 
