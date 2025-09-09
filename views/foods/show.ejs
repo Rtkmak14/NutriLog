@@ -1,0 +1,29 @@
+<!-- views/applications/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= food.name %></title>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+    <h1><%=food.name%></h1>
+    <ul>
+        <li>Food Type: <%=food.foodType%></li>
+        <li>Serving Size: <%=food.servingSize%></li>
+        <li>Calories: <%=food.calories%></li>
+        <li>Fat: <%=food.fat%></li>
+        <li>Carbohydrates: <%=food.carbohydrates%></li>
+        <li>Protein: <%=food.protein%></li>
+        <li>Sodium: <%=food.sodium%></li>
+        <li>Cholesterol: <%=food.cholesterol%></li>
+        <li>Running Low: <%=food.isLow%></li>
+    </ul>
+
+    <form action="/users/<%=user._id%>/foods/<%=food._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete this food</button>
+    </form>
+  </body>
+</html>

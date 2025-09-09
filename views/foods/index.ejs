@@ -3,9 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Apps</title>
+    <title>Your Foods</title>
   </head>
   <body>
+    <%- include('../partials/navbar.ejs') %>
     <h1>Your Foods</h1>
+    <a href ="/users/<%=user._id%>/foods/new">Add new food</a>
+
+    <% if (foods.some((food) => food.foodType === "meat")) { %>
+      <h2>Meat</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "meat") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "fish")) { %>
+      <h2>Fish</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "fish") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "dairy")) { %>
+      <h2>Dairy</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "dairy") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "vegetable")) { %>
+      <h2>Vegetable</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "vegetable") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "fruit")) { %>
+      <h2>Fruit</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "fruit") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "grain")) { %>
+      <h2>Grain</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "grain") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "legume")) { %>
+      <h2>Legume</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "legume") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "nut")) { %>
+      <h2>Nut</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "nut") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "seed")) { %>
+      <h2>Seed</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "seed") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "oil")) { %>
+      <h2>Oil</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "oil") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "sweetener")) { %>
+      <h2>Sweetener</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "sweetener") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "beverage")) { %>
+      <h2>Beverage</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "beverage") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "condiment")) { %>
+      <h2>Condiment</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "condiment") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "supplement")) { %>
+      <h2>Supplement</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "supplement") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "processed")) { %>
+      <h2>Processed</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "processed") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
+    <% if (foods.some((food) => food.foodType === "other")) { %>
+      <h2>Other</h2>
+        <ul>
+          <% foods.forEach((food) => { if (food.foodType === "other") { %>
+          <li><a href="/users/<%=user._id%>/foods/<%=food._id%>"><%= food.name %></a></li>
+          <% }}); %>
+        </ul>
+    <% } %>
+
   </body>
 </html>

@@ -6,18 +6,19 @@ const { stringify } = require("querystring")
 
 const foodSchema = new mongoose.Schema({
     name: String,
-    isLow: Boolean,
     foodType: {type: String,
         enum:["meat", "fish", "dairy", "vegetable", "fruit", "grain",
     "legume", "nut", "seed", "oil", "sweetener", "beverage",
     "condiment", "supplement", "processed", "other"
-        ]},       
+        ]},
+    servingSize: String,       
     calories: Number,
     fat: Number,
     carbohydrates: Number,
     protein: Number,
     sodium: Number,
-    cholesterol: Number
+    cholesterol: Number,
+    isLow: Boolean
 })
 
 const userSchema = new mongoose.Schema({
