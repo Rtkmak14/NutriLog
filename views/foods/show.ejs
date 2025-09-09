@@ -22,8 +22,16 @@
         <li>Running Low: <%=food.isLow%></li>
     </ul>
 
+    <a href="/users/<%= user._id %>/foods/<%= food._id %>/edit">
+        <button type="button">Edit this food</button>
+    </a>
+
+
     <form action="/users/<%=user._id%>/foods/<%=food._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete this food</button>
     </form>
+
+    
+    
   </body>
 </html>
