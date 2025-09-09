@@ -3,6 +3,18 @@ const router = express.Router()
 
 const User = require("../models/user.js")
 
+router.get(`/`, async (req,res)=> {
+    try{
+        const allUsers = await User.find({})
+        res.render("users/index.ejs",{
+            users: allUsers,
+            currentUser: req.session.user
+        })
+        }
+    catch (error) {
+        console.log(error)
+    }
 
+})
 
 module.exports = router
