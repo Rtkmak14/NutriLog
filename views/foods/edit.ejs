@@ -8,42 +8,42 @@
   <body>
     <%- include('../partials/navbar.ejs') %>
     <h1>Edit <%=food.name%> below:</h1>
-    <form action="/users/<%=user._id%>/foods" method="POST">
+    <form action="/users/<%=user._id%>/foods/<%=food._id%>?_method=PUT" method="POST">
         <label for="name">Name:</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" value="<%=food.name%>">
         <label for="foodType">Food Type:</label>
         <select id="foodType" name="foodType">
-            <option value ="meat">Meat</option>
-            <option value ="fish">Fish</option>
-            <option value ="dairy">Dairy</option>
-            <option value ="vegetable">Vegetable</option>
-            <option value ="fruit">Fruit</option>
-            <option value ="grain">Grain</option>
-            <option value ="legume">Legume</option>
-            <option value ="nut">Nut</option>
-            <option value ="seed">Seed</option>
-            <option value ="oil">Oil</option>
-            <option value ="sweetener">Sweetener</option>
-            <option value ="beverage">Beverage</option>
-            <option value ="condiment">Condiment</option>
-            <option value ="supplement">Supplement</option>
-            <option value ="processed">Processed</option>
-            <option value ="other">Other</option>
+            <option value="meat" <%= food.foodType === "meat" ? "selected" : "" %>>Meat</option>
+            <option value ="fish" <%= food.foodType === "fish" ? "selected" : "" %>>Fish</option>
+            <option value ="dairy" <%= food.foodType === "dairy" ? "selected" : "" %>>Dairy</option>
+            <option value ="vegetable" <%= food.foodType === "vegetable" ? "selected" : "" %>>Vegetable</option>
+            <option value ="fruit" <%= food.foodType === "fruit" ? "selected" : "" %>>Fruit</option>
+            <option value ="grain" <%= food.foodType === "grain" ? "selected" : "" %>>Grain</option>
+            <option value ="legume" <%= food.foodType === "legume" ? "selected" : "" %>>Legume</option>
+            <option value ="nut" <%= food.foodType === "nut" ? "selected" : "" %>>Nut</option>
+            <option value ="seed" <%= food.foodType === "seed" ? "selected" : "" %>>Seed</option>
+            <option value ="oil" <%= food.foodType === "oil" ? "selected" : "" %>>Oil</option>
+            <option value ="sweetener" <%= food.foodType === "sweetener" ? "selected" : "" %>>Sweetener</option>
+            <option value ="beverage" <%= food.foodType === "beverage" ? "selected" : "" %>>Beverage</option>
+            <option value ="condiment" <%= food.foodType === "condiment" ? "selected" : "" %>>Condiment</option>
+            <option value ="supplement" <%= food.foodType === "supplement" ? "selected" : "" %>>Supplement</option>
+            <option value ="processed" <%= food.foodType === "processed" ? "selected" : "" %>>Processed</option>
+            <option value ="other" <%= food.foodType === "other" ? "selected" : "" %>>Other</option>
         </select>
         <label for="servingSize">Serving Size:</label>
-        <input type="text" name="servingSize" id="servingSize">
+        <input type="text" name="servingSize" id="servingSize" value="<%=food.servingSize%>">
         <label for="calories">Calories:</label>
-        <input type="text" name="calories" id="calories">
+        <input type="text" name="calories" id="calories" value="<%=food.calories%>">
         <label for="fat">Fat:</label>
-        <input type="text" name="fat" id="fat">
+        <input type="text" name="fat" id="fat" value="<%=food.fat%>">
         <label for="carbohydrates">Carbohydrates:</label>
-        <input type="text" name="carbohydrates" id="carbohydrates">
+        <input type="text" name="carbohydrates" id="carbohydrates" value="<%=food.carbohydrates%>">
         <label for="protein">Protein:</label>
-        <input type="text" name="protein" id="protein">
+        <input type="text" name="protein" id="protein" value="<%=food.protein%>">
         <label for="sodium">Sodium:</label>
-        <input type="text" name="sodium" id="sodium">
+        <input type="text" name="sodium" id="sodium" value="<%=food.sodium%>">
         <label for="cholesterol">Cholesterol:</label>
-        <input type="text" name="cholesterol" id="cholesterol">
+        <input type="text" name="cholesterol" id="cholesterol" value="<%=food.cholesterol%>">
         
         <div>
             <label>Running Low:</label>
@@ -53,9 +53,10 @@
             <input type="radio" name="isLow" value="false" id="isLowFalse">
             <label for="isLowFalse">No</label>
         </div>
-
-
-        <button type="submit">Add Food</button>
+        <button type="submit">
+            Update Food
+        </button>
     </form>
+
   </body>
 </html>
