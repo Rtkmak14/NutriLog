@@ -21,6 +21,33 @@ router.get(`/new`, async (req,res)=> {
     res.render("foods/new.ejs")
 })
 
+router.get(`/inventory`, async (req,res)=> {
+    try {
+        const currentUser = await User.findById(req.session.user._id)
+        const foods = currentUser.foods.filter((food)=> {
+            return food.isLow
+        })
+
+        let message = ""
+
+        if (foods.length===0) {
+            message = "You're all caught up!"
+        }
+
+        res.render("foods/inventory.ejs",{
+            foods: foods,
+            user: currentUser,
+            message: message
+        })
+    }
+
+    catch (error) {
+        console.log(error)
+        res.redirect(`/`)
+    }
+})
+
+
 router.post(`/`, async (req,res)=> {
     try {
         const currentUser = await User.findById(req.session.user._id)
@@ -50,10 +77,11 @@ router.get(`/:foodId`,async (req,res)=> {
 })
 
 router.delete(`/:foodId`, async (req,res)=> {
-    try { const currentUser = await User.findById(req.session.user._id)
-    currentUser.foods.id(req.params.foodId).deleteOne()
-    await currentUser.save()
-    res.redirect(`/users/${currentUser._id}/foods`)
+    try { 
+        const currentUser = await User.findById(req.session.user._id)
+        currentUser.foods.id(req.params.foodId).deleteOne()
+        await currentUser.save()
+        res.redirect(`/users/${currentUser._id}/foods`)
     }
 
     catch (error) {
@@ -93,5 +121,6 @@ router.put(`/:foodId`, async (req,res)=>{
         res.redirect(`/`)
     }
 })
+
 
 module.exports = router
