@@ -31,7 +31,7 @@ router.get(`/inventory`, async (req,res)=> {
         let message = ""
 
         if (foods.length===0) {
-            message = "You're all caught up!"
+            message = "You're fully stocked!"
         }
 
         res.render("foods/inventory.ejs",{
