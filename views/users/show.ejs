@@ -8,7 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Bungee&display=swap" rel="stylesheet">
 </head>
 <body>
-    <%- include('../partials/navbar.ejs') %>
+  <%- include('../partials/navbar.ejs') %>
+
+  <%if (user.foods.length===0) { %>
+    <h1>User hasn't logged any foods yet!</h1>
+  <%} else { %>
+
     <h1><%=user.username%></h1>
 
     <% if (user.foods.some((food) => food.foodType === "meat")) { %>
@@ -153,7 +158,8 @@
           <li><%= food.name %></li>
           <% }}); %>
         </ul>
-    <% } %>
+    <% }
+       } %>
 
 </body>
 </html>
