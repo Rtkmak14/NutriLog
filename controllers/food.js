@@ -21,7 +21,7 @@ router.get(`/new`, async (req,res)=> {
     res.render("foods/new.ejs")
 })
 
-router.get(`/inventory`, async (req,res)=> {
+router.get(`/pantry`, async (req,res)=> {
     try {
         const currentUser = await User.findById(req.session.user._id)
         const foods = currentUser.foods.filter((food)=> {
@@ -34,7 +34,7 @@ router.get(`/inventory`, async (req,res)=> {
             message = "You're fully stocked!"
         }
 
-        res.render("foods/inventory.ejs",{
+        res.render("foods/pantry.ejs",{
             foods: foods,
             user: currentUser,
             message: message
