@@ -55,6 +55,20 @@ button:hover {
   background-color: #ffa726;
 }
 
+img {
+  display: block;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+
+
+
 
 
 
