@@ -12,7 +12,6 @@ router.get(`/`, async (req,res)=> {
    }
  
    catch (error) {
-    console.log(error)
     res.redirect(`/`)
    }
 })
@@ -42,7 +41,6 @@ router.get(`/pantry`, async (req,res)=> {
     }
 
     catch (error) {
-        console.log(error)
         res.redirect(`/`)
     }
 })
@@ -57,7 +55,6 @@ router.post(`/`, async (req,res)=> {
     }
 
     catch (error) {
-        console.log(error)
         res.redirect(`/`)
     }
 })
@@ -70,7 +67,6 @@ router.get(`/:foodId`,async (req,res)=> {
     }
 
     catch (error) {
-        console.log(error)
         res.redirect(`/`)
     }
     
@@ -85,7 +81,6 @@ router.delete(`/:foodId`, async (req,res)=> {
     }
 
     catch (error) {
-        console.log(error)
         res.redirect(`/`)
     }
     
@@ -102,7 +97,6 @@ router.get(`/:foodId/edit`, async (req,res)=> {
     }
 
     catch (error) {
-        console.log(error)
         res.redirect(`/`)
     }
 })
@@ -117,7 +111,6 @@ router.put(`/:foodId`, async (req,res)=>{
     }
 
     catch (error) {
-        console.log(error)
         res.redirect(`/`)
     }
 })
