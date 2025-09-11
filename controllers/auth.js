@@ -19,7 +19,11 @@ router.get(`/sign-out`,(req,res)=>{
 })
 
 router.post(`/sign-up`, async (req,res)=> {
+    
+     req.body.username= req.body.username.toLowerCase()
+
     const userInDatabase = await User.findOne({username:req.body.username})
+
     if (userInDatabase) {
         return res.send("Username already taken!")
     }
@@ -30,12 +34,13 @@ router.post(`/sign-up`, async (req,res)=> {
 
     const hashedPassword = bcrypt.hashSync(req.body.password,10)
     req.body.password = hashedPassword
-    
+
     const user = await User.create(req.body)
     res.redirect(`/`)
 })
 
 router.post(`/sign-in`, async (req,res)=> {
+    req.body.username= req.body.username.toLowerCase()
     const userInDatabase = await User.findOne({username:req.body.username})
     if (!userInDatabase) {
         return res.send("Login failed. Please try again!")
