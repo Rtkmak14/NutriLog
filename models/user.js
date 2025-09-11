@@ -6,7 +6,7 @@ const { stringify } = require("querystring")
 
 const foodSchema = new mongoose.Schema({
     name: {type: String, required: true},
-    brand: String,
+    brand: {type: String, required:true},
     foodType: {type: String,
         enum:["meat", "fish", "dairy", "vegetable", "fruit", "grain",
     "legume", "nut", "seed", "oil", "sweetener", "beverage",
