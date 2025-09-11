@@ -51,10 +51,12 @@
         
         <div>
             <label>Running Low:</label>
-            <input type="radio" name="isLow" value="true" id="isLowTrue">
+            <input type="radio" name="isLow" value="true" id="isLowTrue"
+              <%= food.isLow === true ? "checked" : "" %>>
             <label for="isLowTrue">Yes</label>
 
-            <input type="radio" name="isLow" value="false" id="isLowFalse">
+            <input type="radio" name="isLow" value="false" id="isLowFalse"
+              <%= food.isLow === false ? "checked" : "" %>>
             <label for="isLowFalse">No</label>
         </div>
         <button type="submit">
