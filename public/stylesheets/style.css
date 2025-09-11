@@ -84,6 +84,25 @@ img {
   align-items: center;
 }
 
+form {
+    display:flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+input[type="text"],
+select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Bungee', sans-serif;
+  background-color: #f8f8f8;
+  color: #7da36ec4;
+  transition: border-color 0.2s ease;
+}
+
+
 
 
 
