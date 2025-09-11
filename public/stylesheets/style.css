@@ -50,6 +50,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  margin:10px 10px
 }
 button:hover {
   background-color:#ffa726;
@@ -59,7 +60,7 @@ button:hover {
   background-color: #ffb74d;
   width: 165px;
   height: 50px;
-  margin: 10px 0px;
+  margin: 10px 10px;
 }
 
 #deleteButton:hover {
