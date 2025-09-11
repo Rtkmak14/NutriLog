@@ -12,7 +12,7 @@
     <h1>Your Foods</h1>
     <a href ="/users/<%=user._id%>/foods/new">Add new food</a>
 
-    <div class="tile container">
+    <div class="tile-container">
       <% if (foods.some((food) => food.foodType === "meat")) { %>
         <div class="tile">
         <h2>Meat</h2>
