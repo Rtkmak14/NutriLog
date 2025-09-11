@@ -52,6 +52,17 @@ button {
   transition: background-color 0.2s ease;
 }
 button:hover {
+  background-color:#ffa726;
+}
+
+#deleteButton {
+  background-color: #ffb74d;
+  width: 165px;
+  height: 50px;
+  margin: 10px 0px;
+}
+
+#deleteButton:hover {
   background-color: #ffa726;
 }
 
@@ -101,6 +112,14 @@ select {
   color: #7da36ec4;
   transition: border-color 0.2s ease;
 }
+
+.header {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+    
 
 
 
